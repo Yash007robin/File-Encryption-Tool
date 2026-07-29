@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Local File Encryption Tool</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="app">
+
+    <header class="hero">
+      <div class="hero-top">
+        <div class="hero-title">
+          <h1>Local File Encryption Tool</h1>
+          <p>Encrypt and decrypt your files securely on your device.</p>
+        </div>
+        <div class="badge-secure">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5l-8-3z" fill="#22c55e" opacity="0.15"/><path d="M12 2L4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5l-8-3z" stroke="#22c55e" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div>
+            <strong>Secure &middot; Offline &middot; Local</strong>
+            <span>Your data never leaves your device</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-body">
+        <div class="feature-col left">
+          <div class="feature">
+            <div class="feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5l-8-3z" stroke="#3b82f6" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            </div>
+            <div><strong>AES-256 Encryption</strong><span>Military-grade encryption for maximum security</span></div>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 7l9-4 9 4v5c0 5.5-3.8 9.7-9 11-5.2-1.3-9-5.5-9-11V7z" stroke="#3b82f6" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            </div>
+            <div><strong>100% Local</strong><span>Files stay on your device. No upload. No tracking.</span></div>
+          </div>
+        </div>
+
+        <div class="hero-mark">
+          <div class="mark-rings"></div>
+          <svg width="150" height="150" viewBox="0 0 150 150" fill="none">
+            <path d="M75 8 L132 30 V72 C132 105 108 128 75 142 C42 128 18 105 18 72 V30 L75 8Z" fill="url(#shieldGrad)" fill-opacity="0.12" stroke="url(#shieldGrad)" stroke-width="2.5"/>
+            <rect x="57" y="70" width="36" height="30" rx="5" fill="#0A0D12" stroke="#3b82f6" stroke-width="2.2"/>
+            <path d="M63 70 V58 a12 12 0 0 1 24 0 V70" stroke="#3b82f6" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+            <circle cx="75" cy="83" r="4" fill="#3b82f6"/>
+            <line x1="75" y1="86" x2="75" y2="93" stroke="#3b82f6" stroke-width="2.2" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="shieldGrad" x1="18" y1="8" x2="132" y2="142" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#60A5FA"/>
+                <stop offset="1" stop-color="#2563EB"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+
+        <div class="feature-col right">
+          <div class="feature">
+            <div class="feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="8" cy="15" r="4" stroke="#3b82f6" stroke-width="1.6"/><path d="M11 12l9-9m0 0h-4m4 0v4" stroke="#3b82f6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div><strong>Strong Key Protection</strong><span>Randomly generated 256-bit keys</span></div>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M7 3h8l4 4v14H7V3z" stroke="#3b82f6" stroke-width="1.6" stroke-linejoin="round"/><path d="M9.5 13l2 2 4-4" stroke="#3b82f6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div><strong>Integrity Verified</strong><span>Encrypted files are tamper-evident</span></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="grid">
+      <section class="card">
+        <div class="card-head"><span class="step">1</span><h2>Select File</h2></div>
+
+        <label class="drop-zone" id="drop-zone">
+          <input type="file" id="file-input" hidden>
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z" stroke="#3b82f6" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <p class="drop-main">Drag &amp; drop your file here</p>
+          <p class="drop-sub">or click to browse</p>
+          <span class="browse-btn">Browse File</span>
+        </label>
+
+        <div class="file-card" id="file-card" hidden>
+          <div class="file-icon">📄</div>
+          <div class="file-meta">
+            <strong id="file-name">—</strong>
+            <span id="file-size">—</span>
+          </div>
+          <button class="clear-btn" id="clear-file">✕</button>
+        </div>
+
+        <div class="key-field" id="key-field" hidden>
+          <label>Decryption Key</label>
+          <div class="key-row">
+            <input type="text" id="decrypt-key" placeholder="Paste decryption key">
+          </div>
+          <div class="key-or">or</div>
+          <label class="key-file-btn" id="key-file-btn">
+            <input type="file" id="key-file-input" accept=".key,.txt" hidden>
+            <span>📎 Upload .key file</span>
+          </label>
+          <div class="key-file-name" id="key-file-name"></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-head"><span class="step">2</span><h2>Action</h2></div>
+
+        <button class="action-btn primary" id="encrypt-btn">
+          <span class="action-icon">🔒</span>
+          <span class="action-text"><strong>Encrypt File</strong><span>Secure your file</span></span>
+          <span class="arrow">→</span>
+        </button>
+
+        <button class="action-btn" id="decrypt-btn">
+          <span class="action-icon">🔓</span>
+          <span class="action-text"><strong>Decrypt File</strong><span>Restore your file</span></span>
+          <span class="arrow">→</span>
+        </button>
+
+        <div class="tip-box">
+          <span class="tip-icon">🛡</span>
+          <span><strong>Tip:</strong> Save your key somewhere safe. There is no way to recover it.</span>
+        </div>
+      </section>
+    </div>
+
+    <section class="status-card" id="status-card" hidden>
+      <div class="status-head">
+        <span class="pulse-icon">〰</span>
+        <h2>Operation Status</h2>
+      </div>
+      <div class="status-body">
+        <div class="status-icon" id="status-icon">🔒</div>
+        <div class="status-info">
+          <strong id="status-filename">—</strong>
+          <span id="status-label">Encrypting…</span>
+        </div>
+        <div class="status-progress-wrap">
+          <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+        </div>
+        <div class="status-pct" id="status-pct">0%</div>
+      </div>
+      <div id="key-result"></div>
+      <div id="error-result"></div>
+    </section>
+
+    <footer class="app-footer">
+      <span>🛡 All operations are secure and performed locally on your device.</span>
+      <span>v1.0.0 &middot; <span class="dot-live"></span> Up to date</span>
+    </footer>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
