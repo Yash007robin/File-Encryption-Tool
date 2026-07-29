@@ -132,9 +132,3 @@ python test_crypto.py
 ```
 
 Verifies encryption/decryption round-trips, rejects wrong keys and corrupted/tampered files, and confirms no leftover temp files.
-
----
-
-## License
-
-Add your chosen license here (MIT recommended for open-source tools like this).
